@@ -1,15 +1,20 @@
-resource_manifest_version '05cfa83c-a124-4cfa-a768-c24a5811d8f9'
+resource_manifest_version '44febabe-d386-4d18-afbe-5e627f4af937'
 
 version '1.0.3'
 
 client_scripts {
+	'@es_extended/locale.lua',
+	'locales/en.lua',
+	'locales/cn.lua',
+	'locales/zh.lua',
 	'config.lua',
+	'@es_extended/i18n.lua',
 	'lists/seat.lua',
-	'client.lua'
+	'client/main.lua'
 }
 
 server_scripts {
 	'config.lua',
 	'lists/seat.lua',
-	'server.lua'
+	'server/main.lua'
 }

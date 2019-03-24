@@ -33,11 +33,19 @@ function DrawText3D(x,y,z, text, r,v,b)
  
     local scale = (1/dist)*2
     local fov = (1/GetGameplayCamFov())*100
-    local scale = scale*fov
+	local scale = scale*fov
+	
+	if GetCurrentLanguageId() == 9 then
+		local font = 9
+	elseif GetCurrentLanguageId() == 12 then
+		local font = 12
+	else 
+		local font = 4
+	end
    
     if onScreen then
         SetTextScale(0.0*scale, 1.1*scale)
-        SetTextFont(0)
+        SetTextFont(font)
         SetTextProportional(1)
         SetTextColour(r, v, b, 255)
         SetTextDropshadow(0, 0, 0, 0, 255)
@@ -75,7 +83,7 @@ Citizen.CreateThread(function()
 			end
 		end
 
-		local playerPed = GetPlayerPed(-1)
+		local playerPed = PlayerPedId()
 
 		if sitting and not IsPedUsingScenario(playerPed, currentScenario) then
 			wakeup()
@@ -141,9 +149,9 @@ function sit(object, modelName, data)
 	ESX.TriggerServerCallback('esx_interact:getPlace', function(occupied)
 
 		if occupied then
-			ESX.ShowNotification("Cette place est prise...")
+			ESX.ShowNotification(_U('had_someone'))
 		else
-			local playerPed = GetPlayerPed(-1)
+			local playerPed = PlayerPedId()
 			lastPos = GetEntityCoords(playerPed)
 			currentSitObj = id
 

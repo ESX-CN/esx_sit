@@ -1,5 +1,7 @@
 Config              = {}
 
+Config.Locale       = 'en'
+
 Config.MaxDistance = 1.5
 
 Config.debug = false

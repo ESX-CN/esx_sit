@@ -7,6 +7,7 @@ Config.MaxDistance = 1.5
 Config.debug = false
 
 Config.Interactables = {
+	"v_club_stagechair",
 	"prop_bench_01a",
 	"prop_bench_01b",
 	"prop_bench_01c",

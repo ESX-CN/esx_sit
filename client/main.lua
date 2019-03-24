@@ -131,6 +131,7 @@ Citizen.CreateThread(function()
 end)
 
 function wakeup()
+	local playerPed = PlayerPedId()
 	ClearPedTasks(playerPed)
 	sitting = false
 	SetEntityCoords(playerPed, lastPos)
